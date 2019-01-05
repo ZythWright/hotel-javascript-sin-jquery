@@ -1,4 +1,5 @@
--- MySQL Workbench Forward Engineering
+-- MySQL Workbench Forward Engineering 
+/*  TONI TORRES & ALDO MENENDEZ */
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -33,6 +34,21 @@ CREATE TABLE IF NOT EXISTS `dbHotel`.`user` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+-- -----------------------------------------------------
+-- Table `dbHotel`.`customer`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `dbHotel`.`customer` ;
+
+CREATE TABLE IF NOT EXISTS `dbHotel`.`customer` (
+  `id_customer` INT(11) NOT NULL AUTO_INCREMENT,
+  `name_customer` TEXT NULL DEFAULT NULL,
+  `surname_customer` TEXT NULL DEFAULT NULL,
+  `dni` VARCHAR(9) NULL DEFAULT NULL,
+  `nationality` VARCHAR(25) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_customer`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
 
 -- -----------------------------------------------------
 -- Table `dbHotel`.`room`
@@ -41,7 +57,7 @@ DROP TABLE IF EXISTS `dbHotel`.`room` ;
 
 CREATE TABLE IF NOT EXISTS `dbHotel`.`room` (
   `id_room` INT(11) NOT NULL AUTO_INCREMENT,
-  `type` ENUM('individual', 'doble', 'triple') NULL DEFAULT NULL,
+  `type_room` ENUM('individual', 'doble', 'triple') NULL DEFAULT NULL,
   PRIMARY KEY (`id_room`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -55,14 +71,18 @@ DROP TABLE IF EXISTS `dbHotel`.`booking` ;
 CREATE TABLE IF NOT EXISTS `dbHotel`.`booking` (
   `id_booking` INT(11) NOT NULL AUTO_INCREMENT,
   `nameof` TEXT NULL DEFAULT NULL,
-  `type` ENUM('semi', 'completa') NULL DEFAULT NULL,
+  `type_booking` ENUM('dormir','semi', 'completa') NULL DEFAULT NULL,
+  `estat` ENUM('reservat', 'ocupat','lliure') NULL DEFAULT NULL,
   `fecha_ini` DATE NULL DEFAULT NULL,
   `fecha_final` DATE NULL DEFAULT NULL,
+  `num_people` INT(11) NULL DEFAULT NULL,
   `id_user` INT(11) NULL DEFAULT NULL,
   `id_room` INT(11) NULL DEFAULT NULL,
+  `id_customer` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id_booking`),
   INDEX `id_user` (`id_user` ASC),
   INDEX `id_room` (`id_room` ASC),
+  INDEX `id_customer` (`id_customer` ASC),
   CONSTRAINT `booking_ibfk_1`
     FOREIGN KEY (`id_user`)
     REFERENCES `dbHotel`.`user` (`id_user`)
@@ -71,6 +91,11 @@ CREATE TABLE IF NOT EXISTS `dbHotel`.`booking` (
   CONSTRAINT `booking_ibfk_2`
     FOREIGN KEY (`id_room`)
     REFERENCES `dbHotel`.`room` (`id_room`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `booking_ibfk_3`
+    FOREIGN KEY (`id_customer`)
+    REFERENCES `dbHotel`.`customer` (`id_customer`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB

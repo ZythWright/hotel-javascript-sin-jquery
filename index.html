@@ -15,6 +15,7 @@
 
         <!-- Font Awesome 5+ -->
         <script src="./node_modules/@fortawesome/fontawesome-free/js/all.js"></script>
+        <script src="./funcions.js"></script>
 
         <!-- Styles CSS -->
         <link rel="stylesheet" href="./assets/css/style.css"> 
@@ -25,7 +26,12 @@
     <body>
         <div class="container">
             <div class="row">
-                <h1>Admin Panel</h1>
+                <div>
+                    <h1 id="title"><!-- via JavaScript getTitle and getDate--></h1>
+                    <div class="form-group">Introduce una fecha: <input type="date" id="inputDate" oninput="llistarReserves()"></div>       
+                </div> 
+            </div>
+            <div class="row">
                 <table class="table table-hover" id="table1">
                     <thead>
                         <tr>
@@ -33,28 +39,28 @@
                         </tr>
                     </thead>
                     <tr>
-                        <td>101</td>
-                        <td>102</td>
-                        <td>103</td>
-                        <td>104</td>
-                        <td>105</td>
-                        <td>106</td>
-                        <td>107</td>
-                        <td>108</td>
-                        <td>109</td>
-                        <td>110</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">101-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">102-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">103-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">104-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">105-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">106-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">107-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">108-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">109-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">110-T</td>
                     </tr>
                     <tr>
-                        <td>111</td>
-                        <td>112</td>
-                        <td>113</td>
-                        <td>114</td>
-                        <td>115</td>
-                        <td>116</td>
-                        <td>117</td>
-                        <td>118</td>
-                        <td>119</td>
-                        <td>120</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">111-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">112-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">113-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">114-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">115-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">116-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">117-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">118-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">119-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">120-I</td>
                     </tr>
                 </table>
                 <table class="table table-hover" id="table2">
@@ -64,28 +70,28 @@
                         </tr>
                     </thead>
                     <tr>
-                        <td>201</td>
-                        <td>202</td>
-                        <td>203</td>
-                        <td>204</td>
-                        <td>205</td>
-                        <td>206</td>
-                        <td>207</td>
-                        <td>208</td>
-                        <td>209</td>
-                        <td>210</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">201-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">202-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">203-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">204-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">205-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">206-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">207-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">208-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">209-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">210-I</td>
                     </tr>
                     <tr>
-                        <td>211</td>
-                        <td>212</td>
-                        <td>213</td>
-                        <td>214</td>
-                        <td>215</td>
-                        <td>216</td>
-                        <td>217</td>
-                        <td>218</td>
-                        <td>219</td>
-                        <td>220</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">211-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">212-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">213-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">214-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">215-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">216-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">217-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">218-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">219-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">220-I</td>
                     </tr>
                 </table>
                 <table class="table table-hover" id="table3">
@@ -95,28 +101,28 @@
                         </tr>
                     </thead>
                     <tr>
-                        <td>301</td>
-                        <td>302</td>
-                        <td>303</td>
-                        <td>304</td>
-                        <td>305</td>
-                        <td>306</td>
-                        <td>307</td>
-                        <td>308</td>
-                        <td>309</td>
-                        <td>310</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">301-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">302-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">303-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">304-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">305-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">306-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">307-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">308-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">309-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">310-T</td>
                     </tr>
                     <tr>
-                        <td>311</td>
-                        <td>312</td>
-                        <td>313</td>
-                        <td>314</td>
-                        <td>315</td>
-                        <td>316</td>
-                        <td>317</td>
-                        <td>318</td>
-                        <td>319</td>
-                        <td>320</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">311-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">312-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">313-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">314-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">315-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">316-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">317-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">318-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">319-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">320-D</td>
                     </tr>
                 </table>
                 <table class="table table-hover" id="table4">
@@ -126,32 +132,64 @@
                         </tr>
                             </thead>
                     <tr>
-                        <td>401</td>
-                        <td>402</td>
-                        <td>403</td>
-                        <td>404</td>
-                        <td>405</td>
-                        <td>406</td>
-                        <td>407</td>
-                        <td>408</td>
-                        <td>409</td>
-                        <td>410</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">401-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">402-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">403-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">404-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">405-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">406-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">407-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">408-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">409-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">410-T</td>
                     </tr>
                     <tr>
-                        <td>411</td>
-                        <td>412</td>
-                        <td>413</td>
-                        <td>414</td>
-                        <td>415</td>
-                        <td>416</td>
-                        <td>417</td>
-                        <td>418</td>
-                        <td>419</td>
-                        <td>420</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">411-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">412-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">413-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">414-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">415-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">416-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">417-D</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">418-I</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">419-T</td>
+                        <td class="room lliure" data-toggle="modal" data-target="#modalBookingInfo" onclick="bookingInfo(this)">420-D</td>
                     </tr>
                 </table>
             </div>
         </div>
+
+        <!-- TEST -->
+        <div>
+            <table id="llista">
+
+            </table>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalBookingInfo" tabindex="-1" role="dialog" aria-labelledby="modalBookingInfoTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle" style="position: absolute">Booking Information</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                              
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"> <i class="fas fa-business-time"></i> Reserva Ocupada</button>
+                    <button type="button" class="btn btn-danger"> <i class="far fa-trash-alt"></i> Eliminar</button>-->
+                </div>
+            </div>
+            </div>
+        </div>
+        <script>
+            inicia();
+        </script>
     </body>
     <footer>
 

@@ -1,7 +1,47 @@
 table {
     width: 100%;
-    margin: 0%;
+    margin: 0%;;
 }
-body{
+td{
+    background-color:#f2f2f2;
+    cursor: pointer;
+}
+td:hover{
     background-color:#ccc;
+}
+
+.lliure{
+    background-color: lawngreen;
+}
+
+.reservat{
+    background-color: yellow;
+    /*background-color: khaki;*/
+}
+
+.ocupat{
+    background-color: lightcoral;
+}
+
+.alertaText{
+    text-align: center;
+}
+
+#msgInvalidName, #msgInvalidNameCliente, #msgInvalidApeCliente, #msgInvalidDNI, #msgInvalidNumCliente{
+    display: none;
+    color: red;
+}
+
+#msgInvalidDateIni, #msgInvalidDateFinal{
+    visibility: hidden;
+    color: red
+}
+
+.is-invalid{
+    display: block;
+    border: 1px solid red;
+}
+
+#mssgAlertaEdit{
+    display:none;
 }

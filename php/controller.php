@@ -6,16 +6,18 @@
 		$accio = $_POST['accio'];
 
 		switch ($accio) {
-			case "llista" : echo llistaEmpleats();
-				            break;
-			case "paginacio" : echo generaPaginacio();
-							break;
-			case "llistadep" : echo llistaDepartaments();
-							break;
-			case "afegir" : echo afegirEmpleat($_POST['dades']);
-							break;
-							
-			
+            case "llistaReserva" : echo llistaReserves($_POST['inputDate']);
+				break;
+			case "llistaReservaInfo" : echo llistaReservesInfo($_POST['id_booking_selected']);
+				break;
+			case "eliminarBooking" : echo eliminarBooking($_POST['id_booking_selected']);
+				break;	
+			case "changeStateBooking" : echo changeStateBooking($_POST['id_booking_selected']);
+				break;
+			case "addBooking" : echo addBooking($_POST['dades']);
+				break;
+			case "actualizarBooking" : echo updateBooking($_POST['dades']);
+				break;
 		}
 	}
 	

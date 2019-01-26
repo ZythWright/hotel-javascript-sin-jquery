@@ -319,13 +319,14 @@ function addBooking(){
 function deleteBooking() {
 	
 	if (confirm("Estas seguro que quieres Eliminar esta Reserva?")) {
-		document.getElementById(id_booking_selected).id = ""; /* Elimino el id del html para que no de conflicto */
+		
 		var ajax = new XMLHttpRequest();
 		ajax.onreadystatechange = function() {
 			if (this.readyState==4 && this.status==200) {
 				var resposta = JSON.parse(this.responseText);
-				var status = resposta.status;
-				if (status == true){
+				//var status = resposta.status;
+				if (resposta == "true"){
+					document.getElementById(id_booking_selected).id = ""; /* Elimino el id del html para que no de conflicto */
 					llistarReserves();
 					$('#modalBookingInfo').modal('hide');
 				}else{ 

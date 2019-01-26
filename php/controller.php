@@ -6,7 +6,7 @@
 		$accio = $_POST['accio'];
 
 		switch ($accio) {
-            case "llistaReserva" : echo llistaReserves($_POST['inputDate']);
+            case "llistaReserva" : print_r(llistaReserves($_POST['inputDate']));
 				break;
 			case "llistaReservaInfo" : echo llistaReservesInfo($_POST['id_booking_selected']);
 				break;

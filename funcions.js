@@ -324,8 +324,9 @@ function deleteBooking() {
 		ajax.onreadystatechange = function() {
 			if (this.readyState==4 && this.status==200) {
 				var resposta = JSON.parse(this.responseText);
-				//var status = resposta.status; test
-				if (resposta == "true"){
+				var status = resposta.status;
+
+				if (status == true){
 					document.getElementById(id_booking_selected).id = ""; /* Elimino el id del html para que no de conflicto */
 					llistarReserves();
 					$('#modalBookingInfo').modal('hide');
